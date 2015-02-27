@@ -2,11 +2,12 @@ import java.util.*;
 
 public class MusicLibrary {
   
-  private ArrayList<Song> songs;
+  private ArrayList<Song> songs;// = new ArrayList<Song>();
   private int currentSortField = 0;  // Unsorted
   
+  
   public MusicLibrary() { 
-    /* YOUR CONSTRUCTOR CODE HERE*/
+    songs = new ArrayList<Song>();
   }
   
   /* 
@@ -30,7 +31,7 @@ public class MusicLibrary {
    */
   public void Sort ()
   {
-     currentSortField = field;
+      
   }
   
   /*
