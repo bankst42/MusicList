@@ -1,11 +1,14 @@
-import java.util.Arrays;
+import java.util.*;
+import java.lang.String;
 
 public class MusicRunner
 {
   public static void main (String[] args)
   {
+    Song song;
     int count = 0;
     MusicReader mr = new MusicReader();
+    MusicLibrary ml = new MusicLibrary();
     
     mr.open("musiclist.csv");
     
@@ -14,7 +17,6 @@ public class MusicRunner
     // First line contains all the fields - We don't want to save this anywhere but we can
     // print it for now to see what information we have.
     System.out.println(Arrays.toString(data));
-    System.out.println("run");
     data = mr.getSongData();  // Get next line of song data
     
     // if data is null then we were unable to read a line of song data, so
@@ -26,8 +28,8 @@ public class MusicRunner
       System.out.println(Arrays.toString(data));
       
       // Let's try to create a Song object
-      Song song = new Song(data[0], data[1]);  // data[0] is the artist and data[1] is the name
-      
+      if (data[2].compareTo("song") == 0)
+      ml.addSong(new Song(data[0], data[1], data[3], data[4], data[16]));  // data[0] is the artist and data[1] is the name
       count++;
       
       if (count >= 10)  // For now only read ONE song
