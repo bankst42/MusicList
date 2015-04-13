@@ -35,7 +35,7 @@ public class MusicLibrary {
    */
   public void Sort ()
   {
-      
+      Collections.sort(songs);
   }
   
   /*

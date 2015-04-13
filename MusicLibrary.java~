@@ -2,7 +2,7 @@ import java.util.*;
 
 public class MusicLibrary {
   
-  private ArrayList<Song> songs;// = new ArrayList<Song>();
+  public ArrayList<Song> songs;// = new ArrayList<Song>();
   private int currentSortField = 0;  // Unsorted
   
   
@@ -15,6 +15,7 @@ public class MusicLibrary {
    */
   public void addSong (Song song)
   {
+    songs.add(song);
   }
   
   /*
@@ -23,7 +24,10 @@ public class MusicLibrary {
    */
   public Song getSong (int num)
   {
+    
+    if (num > songs.size() || num < 0)
     return null;
+    return songs.get(num);
   }
   
   /*

@@ -48,11 +48,16 @@ public class MusicRunner
       
       data = mr.getSongData();  // Get next line of song data
     }
+    ml.Sort();
     System.out.println("Size: " + ml.songs.size());
     for (int i = 0; i < ml.songs.size(); i++)
     {
       System.out.println(ml.songs.get(i).name);
     }
+    System.out.println("List a number from 0-9");
+    Scanner scanner = new Scanner(System.in);
+    System.out.println(ml.getSong(scanner.nextInt()).notes);
+    mr.close();
     
     mr.close();
   }
